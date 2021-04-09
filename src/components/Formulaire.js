@@ -5,15 +5,30 @@ class Formulaire extends Component {
     message: "",
   };
 
+  createMessage = () => {
+      const { addMessage, pseudo } = this.props
+
+      const message = {
+          pseudo,
+          message: this.state.message
+      }
+
+      addMessage(message)
+
+      //Reset
+      this.setState({ message: ''})
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("submit");
-  };
+    this.createMessage()
+  }
 
   HandleChange = (event) => {
     const message = event.target.value;
     this.setState({ message });
-  };
+  }
+
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
