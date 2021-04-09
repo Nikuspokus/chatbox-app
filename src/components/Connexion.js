@@ -4,13 +4,13 @@ class Connexion extends Component {
   render() {
     return (
       <div className="connexionBox">
-        <from className="connexion">
+        <form className="connexion">
           <input 
             placeholder="Pseudo" 
             type="text" 
-            reduired />
+            required />
             <button type="submit">Go</button>
-        </from>
+        </form>
       </div>
     );
   }
