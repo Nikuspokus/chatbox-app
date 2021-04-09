@@ -1,14 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>ChatApp</h1>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render () {
+    return (
+      <div className='box' />
+    )
+  }
 }
 
-export default App;
+export default App
