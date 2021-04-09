@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class Formulaire extends Component {
   state = {
     message: "",
+    length: this.props.length
   };
 
   createMessage = () => {
@@ -24,16 +25,21 @@ class Formulaire extends Component {
     this.createMessage()
   }
 
-  HandleChange = (event) => {
+  handleChange = (event) => {
     const message = event.target.value;
-    this.setState({ message });
+    const length = this.props.length - message.length
+    this.setState({ message, length });
   }
 
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
-        <textarea value={this.state.message} onChange={this.HandleChange} required maxLength="140" />
-        <div className="info">140</div>
+        <textarea 
+        value={this.state.message} 
+        onChange={this.handleChange} 
+        required 
+        maxLength={this.props.length} />
+        <div className='info'>{ this.state.length }</div>
         <button type="submit">Envoyer!</button>
       </form>
     );
