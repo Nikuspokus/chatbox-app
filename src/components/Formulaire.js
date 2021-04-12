@@ -8,7 +8,7 @@ class Formulaire extends Component {
 
   createMessage = () => {
       const { addMessage, pseudo, length } = this.props
-
+      // contenu du message: le pseudo + message
       const message = {
           pseudo,
           message: this.state.message

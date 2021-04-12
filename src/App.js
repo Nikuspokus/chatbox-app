@@ -44,10 +44,13 @@ class App extends Component {
     this.setState({ messages })
   };
 
+  isUser = pseudo => pseudo === this.state.pseudo
+
   render() {
     const messages = Object.keys(this.state.messages).map((key) => (
       <Message
         key={key}
+        isUser ={this.isUser}
         message={this.state.messages[key].message}
         pseudo={this.state.messages[key].pseudo}
       />
