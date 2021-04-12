@@ -10,3 +10,8 @@ const firebaseApp = firebase.initializeApp({
 
 // constante permettant de linker rebase avec fire base
 const base = Rebase.createClass(firebase.database())
+
+// initialisation de l'application
+export { firebaseApp }
+
+export default base
